@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Alphabet Games</title>
+</head>
+<body>
+    <div id="nextGame">
+        <button onclick="game1()"> NEXT GAME</button>
+    </div>
+    <div id="exit">
+        <button> EXIT </button>
+    </div>
+    <div id="game1">
+        <div id="game1Box1"><p>ITEM 1</p></div>
+        <div id="game1Box2"><p>ITEM 2</p></div>
+        <div id="game1Box3"><p>ITEM 3</p></div>
+        <div id="game1Box4"><p>ITEM 4</p></div>
+
+        <div id="game1Box5"><p>ITEM 1</p></div>
+        <div id="game1Box6"><p>ITEM 2</p></div>
+        <div id="game1Box7"><p>ITEM 3</p></div>
+        <div id="game1Box8"><p>ITEM 4</p></div>
+    </div>
+
+    <script>
+
+        var randomGame = Math.floor(Math.random() * 33) + 1; 
+
+        console.log(randomGame)
+
+        function game1 () {
+            const game1 = document.getElementById("game1");
+            var game1Box1 = document.getElementById("game1Box1")
+            var game1Box2 = document.getElementById("game1Box2")
+            var game1Box3 = document.getElementById("game1Box3")
+            var game1Box4 = document.getElementById("game1Box4")
+            var game1Box5 = document.getElementById("game1Box5")
+            var game1Box6 = document.getElementById("game1Box6")
+            var game1Box7 = document.getElementById("game1Box7")
+            var game1Box8 = document.getElementById("game1Box8")
+            var randomAnswer1 = Math.floor(Math.random() * 4) + 1;
+            var randomAnswer2 = Math.floor(Math.random() * 4) + 1;
+            var randomAnswer3 = Math.floor(Math.random() * 4) + 1;
+            var randomAnswer4 = Math.floor(Math.random() * 4) + 1;
+            var answer1 = "answer 1";
+            var answer2 = "answer 2";
+            var answer3 = "answer 3";
+            var answer4 = "answer 4";
+            game1.style.display = "block"
+            var randomGame1 = Math.floor(Math.random() * 33) + 1;
+            var randomGame2 = Math.floor(Math.random() * 33) + 1;
+            var randomGame3 = Math.floor(Math.random() * 33) + 1;
+            var randomGame4 = Math.floor(Math.random() * 33) + 1;
+            console.log(randomGame1)
+
+            // answer 1
+            if (randomAnswer1 == 1) {
+                game1Box5.innerHTML = answer1;
+            }
+            if (randomAnswer1 == 2) {
+                game1Box5.innerHTML = answer2;
+            }
+            if (randomAnswer1 == 3) {
+                game1Box5.innerHTML = answer3;
+            }
+            if (randomAnswer1 == 4) {
+                game1Box5.innerHTML = answer4;
+            }
+
+            // answer 2
+            if (randomAnswer2 == 1 && randomAnswer1 != 1) {
+                game1Box6.innerHTML = answer1;
+            } if (randomAnswer1 == 1 && randomAnswer2 == 1) {
+                game1Box6.innerHTML = answer2;
+            }
+            if (randomAnswer2 == 2 && randomAnswer1 != 2) {
+                game1Box6.innerHTML = answer2;
+            } if (randomAnswer1 == 2 && randomAnswer2 == 2) {
+                game1Box6.innerHTML = answer3;
+            }
+            if (randomAnswer2 == 3 && randomAnswer1 != 3) {
+                game1Box6.innerHTML = answer3;
+            } if (randomAnswer2 == 3 && randomAnswer1 == 3) {
+                game1Box6.innerHTML = answer4
+            }
+            if (randomAnswer2 == 4 && randomAnswer1 != 4) {
+                game1Box6.innerHTML = answer4;
+            } if (randomAnswer2 == 4 && randomAnswer1 == 4) {
+                game1Box6.innerHTML = answer1;
+            }
+
+              // answer 3
+              if (randomAnswer3 == 1) {
+                game1Box7.innerHTML = answer1;
+            }
+            if (randomAnswer3 == 2) {
+                game1Box7.innerHTML = answer2;
+            }
+            if (randomAnswer3 == 3) {
+                game1Box7.innerHTML = answer3;
+            }
+            if (randomAnswer3 == 4) {
+                game1Box7.innerHTML = answer4;
+            }
+
+              // answer 4
+              if (randomAnswer4 == 1) {
+                game1Box8.innerHTML = answer1;
+            }
+            if (randomAnswer4 == 2) {
+                game1Box8.innerHTML = answer2;
+            }
+            if (randomAnswer4 == 3) {
+                game1Box8.innerHTML = answer3;
+            }
+            if (randomAnswer4 == 4) {
+                game1Box8.innerHTML = answer4;
+            }
+
+
+            // box 1
+            if (randomGame1 == 1) {
+                game1Box1.innerHTML = "А а"
+            }  if (randomGame1 == 2) {
+                game1Box1.innerHTML = "Б б"
+            }  if (randomGame1 == 3) {
+                game1Box1.innerHTML = "В в"
+            }  if (randomGame1 == 4) {
+                game1Box1.innerHTML = "Г г"
+            }  if (randomGame1 == 5) {
+                game1Box1.innerHTML = "Д д"
+            }  if (randomGame1 == 6) {
+                game1Box1.innerHTML = "Е е"
+            }  if (randomGame1 == 7) {
+                game1Box1.innerHTML = "Ё ё"
+            }  if (randomGame1 == 8) {
+                game1Box1.innerHTML = "Ж ж"
+            }  if (randomGame1 == 9) {
+                game1Box1.innerHTML = "З з"
+            }  if (randomGame1 == 10) {
+                game1Box1.innerHTML = "И и"
+            }  if (randomGame1 == 11) {
+                game1Box1.innerHTML = "Й й"
+            }  if (randomGame1 == 12) {
+                game1Box1.innerHTML = "К к"
+            }  if (randomGame1 == 13) {
+                game1Box1.innerHTML = "Л л"
+            }  if (randomGame1 == 14) {
+                game1Box1.innerHTML = "М м"
+            }  if (randomGame1 == 15) {
+                game1Box1.innerHTML = "Н н"
+            }  if (randomGame1 == 16) {
+                game1Box1.innerHTML = "О о"
+            }  if (randomGame1 == 17) {
+                game1Box1.innerHTML = "П п"
+            }  if (randomGame1 == 18) {
+                game1Box1.innerHTML = "Р р"
+            }  if (randomGame1 == 19) {
+                game1Box1.innerHTML = "С с"
+            }  if (randomGame1 == 20) {
+                game1Box1.innerHTML = "Т т"
+            }  if (randomGame1 == 21) {
+                game1Box1.innerHTML = "У у"
+            }  if (randomGame1 == 22) {
+                game1Box1.innerHTML = "Ф ф"
+            }  if (randomGame1 == 23) {
+                game1Box1.innerHTML = "Х х"
+            }  if (randomGame1 == 24) {
+                game1Box1.innerHTML = "Ц ц"
+            }  if (randomGame1 == 25) {
+                game1Box1.innerHTML = "Ч ч"
+            }  if (randomGame1 == 26) {
+                game1Box1.innerHTML = "Ш ш"
+            }  if (randomGame1 == 27) {
+                game1Box1.innerHTML = "Щ щ"
+            }  if (randomGame1 == 28) {
+                game1Box1.innerHTML = "Ъ ъ"
+            }  if (randomGame1 == 29) {
+                game1Box1.innerHTML = "Ы ы"
+            }  if (randomGame1 == 30) {
+                game1Box1.innerHTML = "Ь ь"
+            }  if (randomGame1 == 31) {
+                game1Box1.innerHTML = "Э э"
+            }  if (randomGame1 == 32) {
+                game1Box1.innerHTML = "Ю ю"
+            }  if (randomGame1 == 33) {
+                game1Box1.innerHTML = "Я я"
+            }
+
+
+            // box 2
+            if (randomGame2 == 1) {
+                if (randomGame1 == 1) {
+                    randomGame2++;
+                }
+                game1Box2.innerHTML = "А а"
+            }  if (randomGame2 == 2) {
+                if (randomGame1 == 2) {
+                    randomGame2++;
+                }
+                game1Box2.innerHTML = "Б б"
+            }  if (randomGame2 == 3) {
+                if (randomGame1 == 3) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "В в"
+            }  if (randomGame2 == 4) {
+                if (randomGame1 == 4) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Г г"
+            }  if (randomGame2 == 5) {
+                if (randomGame1 == 5) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Д д"
+            }  if (randomGame2 == 6) {
+                if (randomGame1 == 6) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Е е"
+            }  if (randomGame2 == 7) {
+                if (randomGame1 == 7) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ё ё"
+            }  if (randomGame2 == 8) {
+                if (randomGame1 == 8) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ж ж"
+            }  if (randomGame2 == 9) {
+                if (randomGame1 == 9) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "З з"
+            }  if (randomGame2 == 10) {
+                if (randomGame1 == 10) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "И и"
+            }  if (randomGame2 == 11) {
+                if (randomGame1 == 11) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Й й"
+            }  if (randomGame2 == 12) {
+                if (randomGame1 == 12) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "К к"
+            }  if (randomGame2 == 13) {
+                if (randomGame1 == 13) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Л л"
+            }  if (randomGame2 == 14) {
+                if (randomGame1 == 14) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "М м"
+            }  if (randomGame2 == 15) {
+                if (randomGame1 == 15) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Н н"
+            }  if (randomGame2 == 16) {
+                if (randomGame1 == 16) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "О о"
+            }  if (randomGame2 == 17) {
+                if (randomGame1 == 17) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "П п"
+            }  if (randomGame2 == 18) {
+                if (randomGame1 == 18) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Р р"
+            }  if (randomGame2 == 19) {
+                if (randomGame1 == 19) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "С с"
+            }  if (randomGame2 == 20) {
+                if (randomGame1 == 20) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Т т"
+            }  if (randomGame2 == 21) {
+                if (randomGame1 == 21) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "У у"
+            }  if (randomGame2 == 22) {
+                if (randomGame1 == 22) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ф ф"
+            }  if (randomGame2 == 23) {
+                if (randomGame1 == 23) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Х х"
+            }  if (randomGame2 == 24) {
+                if (randomGame1 == 24) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ц ц"
+            }  if (randomGame2 == 25) {
+                if (randomGame1 == 25) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ч ч"
+            }  if (randomGame2 == 26) {
+                if (randomGame1 == 26) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ш ш"
+            }  if (randomGame2 == 27) {
+                if (randomGame1 == 27) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Щ щ"
+            }  if (randomGame2 == 28) {
+                if (randomGame1 == 28) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ъ ъ"
+            }  if (randomGame2 == 29) {
+                if (randomGame1 == 29) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ы ы"
+            }  if (randomGame2 == 30) {
+                if (randomGame1 == 30) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ь ь"
+            }  if (randomGame2 == 31) {
+                if (randomGame1 == 31) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Э э"
+            }  if (randomGame2 == 32) {
+                if (randomGame1 == 32) {
+                    randomGame2++
+                }
+                game1Box2.innerHTML = "Ю ю"
+            }  if (randomGame2 == 33) {
+                if (randomGame1 == 33) {
+                    randomGame2 = 1
+                }
+                game1Box2.innerHTML = "Я я"
+            }
+
+
+            // box 3
+            if (randomGame3 == 1) {
+                if (randomGame1 == 1 || randomGame2 == 1) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "А а"
+            }  if (randomGame3 == 2) {
+                if (randomGame1 == 2 || randomGame2 == 2) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Б б"
+            }  if (randomGame3 == 3) {
+                if (randomGame1 == 3 || randomGame2 == 3) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "В в"
+            }  if (randomGame3 == 4) {
+                if (randomGame1 == 4 || randomGame2 == 4) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Г г"
+            }  if (randomGame3 == 5) {
+                if (randomGame1 == 5 || randomGame2 == 5) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Д д"
+            }  if (randomGame3 == 6) {
+                if (randomGame1 == 6 || randomGame2 == 6) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Е е"
+            }  if (randomGame3 == 7) {
+                if (randomGame1 == 7 || randomGame2 == 7) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ё ё"
+            }  if (randomGame3 == 8) {
+                if (randomGame1 == 8 || randomGame2 == 8) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ж ж"
+            }  if (randomGame3 == 9) {
+                if (randomGame1 == 9 || randomGame2 == 9) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "З з"
+            }  if (randomGame3 == 10) {
+                if (randomGame1 == 10 || randomGame2 == 10) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "И и"
+            }  if (randomGame3 == 11) {
+                if (randomGame1 == 11 || randomGame2 == 11) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Й й"
+            }  if (randomGame3 == 12) {
+                if (randomGame1 == 12 || randomGame2 == 12) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "К к"
+            }  if (randomGame3 == 13) {
+                if (randomGame1 == 13 || randomGame2 == 13) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Л л"
+            }  if (randomGame3 == 14) {
+                if (randomGame1 == 14 || randomGame2 == 14) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "М м"
+            }  if (randomGame3 == 15) {
+                if (randomGame1 == 15 || randomGame2 == 15) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Н н"
+            }  if (randomGame3 == 16) {
+                if (randomGame1 == 16 || randomGame2 == 16) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "О о"
+            }  if (randomGame3 == 17) {
+                if (randomGame1 == 17 || randomGame2 == 17) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "П п"
+            }  if (randomGame3 == 18) {
+                if (randomGame1 == 18 || randomGame2 == 18) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Р р"
+            }  if (randomGame3 == 19) {
+                if (randomGame1 == 19 || randomGame2 == 19) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "С с"
+            }  if (randomGame3 == 20) {
+                if (randomGame1 == 20 || randomGame2 == 20) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Т т"
+            }  if (randomGame3 == 21) {
+                if (randomGame1 == 21 || randomGame2 == 21) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "У у"
+            }  if (randomGame3 == 22) {
+                if (randomGame1 == 22 || randomGame2 == 22) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ф ф"
+            }  if (randomGame3 == 23) {
+                if (randomGame1 == 23 || randomGame2 == 23) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Х х"
+            }  if (randomGame3 == 24) {
+                if (randomGame1 == 24 || randomGame2 == 24) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ц ц"
+            }  if (randomGame3 == 25) {
+                if (randomGame1 == 25 || randomGame2 == 25) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ч ч"
+            }  if (randomGame3 == 26) {
+                if (randomGame1 == 26 || randomGame2 == 26) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ш ш"
+            }  if (randomGame3 == 27) {
+                if (randomGame1 == 27 || randomGame2 == 27) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Щ щ"
+            }  if (randomGame3 == 28) {
+                if (randomGame1 == 28 || randomGame2 == 28) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ъ ъ"
+            }  if (randomGame3 == 29) {
+                if (randomGame1 == 29 || randomGame2 == 29) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ы ы"
+            }  if (randomGame3 == 30) {
+                if (randomGame1 == 30 || randomGame2 == 30) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ь ь"
+            }  if (randomGame3 == 31) {
+                if (randomGame1 == 31 || randomGame2 == 31) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Э э"
+            }  if (randomGame3 == 32) {
+                if (randomGame1 == 32 || randomGame2 == 32) {
+                    randomGame3++
+                }
+                game1Box3.innerHTML = "Ю ю"
+            }  if (randomGame3 == 33) {
+                if (randomGame1 == 33 || randomGame2 == 33) {
+                    randomGame3 = 1
+                }
+                game1Box3.innerHTML = "Я я"
+            }
+
+
+            // box 4
+            if (randomGame4 == 1) {
+                if (randomGame1 == 1 || randomGame2 == 1 || randomGame3 == 1) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "А а"
+            }  if (randomGame4 == 2) {
+                if (randomGame1 == 2 || randomGame2 == 2 || randomGame3 == 2) {
+                    randomGame3++
+                }
+                game1Box4.innerHTML = "Б б"
+            }  if (randomGame4 == 3) {
+                if (randomGame1 == 3 || randomGame2 == 3 || randomGame3 == 3) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "В в"
+            }  if (randomGame4 == 4) {
+                if (randomGame1 == 4 || randomGame2 == 4 || randomGame3 == 4) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Г г"
+            }  if (randomGame4 == 5) {
+                if (randomGame1 == 5 || randomGame2 == 5 || randomGame3 == 5) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Д д"
+            }  if (randomGame4 == 6) {
+                if (randomGame1 == 6 || randomGame2 == 6 || randomGame3 == 6) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Е е"
+            }  if (randomGame4 == 7) {
+                if (randomGame1 == 7 || randomGame2 == 7 || randomGame3 == 7) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ё ё"
+            }  if (randomGame4 == 8) {
+                if (randomGame1 == 8 || randomGame2 == 8 || randomGame3 == 8) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ж ж"
+            }  if (randomGame4 == 9) {
+                if (randomGame1 == 9 || randomGame2 == 9 || randomGame3 == 9) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "З з"
+            }  if (randomGame4 == 10) {
+                if (randomGame1 == 10 || randomGame2 == 10 || randomGame3 == 10) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "И и"
+            }  if (randomGame4 == 11) {
+                if (randomGame1 == 11 || randomGame2 == 11 || randomGame3 == 11) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Й й"
+            }  if (randomGame4 == 12) {
+                if (randomGame1 == 12 || randomGame2 == 12 || randomGame3 == 12) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "К к"
+            }  if (randomGame4 == 13) {
+                if (randomGame1 == 13 || randomGame2 == 13 || randomGame3 == 13) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Л л"
+            }  if (randomGame4 == 14) {
+                if (randomGame1 == 14 || randomGame2 == 14 || randomGame3 == 14) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "М м"
+            }  if (randomGame4 == 15) {
+                if (randomGame1 == 15 || randomGame2 == 15 || randomGame3 == 15) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Н н"
+            }  if (randomGame4 == 16) {
+                if (randomGame1 == 16 || randomGame2 == 16 || randomGame3 == 16) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "О о"
+            }  if (randomGame4 == 17) {
+                if (randomGame1 == 17 || randomGame2 == 17 || randomGame3 == 17) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "П п"
+            }  if (randomGame4 == 18) {
+                if (randomGame1 == 18 || randomGame2 == 18 || randomGame3 == 18) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Р р"
+            }  if (randomGame4 == 19) {
+                if (randomGame1 == 19 || randomGame2 == 19 || randomGame3 == 19) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "С с"
+            }  if (randomGame4 == 20) {
+                if (randomGame1 == 20 || randomGame2 == 20 || randomGame3 == 20) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Т т"
+            }  if (randomGame4 == 21) {
+                if (randomGame1 == 21 || randomGame2 == 21 || randomGame3 == 21) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "У у"
+            }  if (randomGame4 == 22) {
+                if (randomGame1 == 22 || randomGame2 == 22 || randomGame3 == 22) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ф ф"
+            }  if (randomGame4 == 23) {
+                if (randomGame1 == 23 || randomGame2 == 23 || randomGame3 == 23) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Х х"
+            }  if (randomGame4 == 24) {
+                if (randomGame1 == 24 || randomGame2 == 24 || randomGame3 == 24) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ц ц"
+            }  if (randomGame4 == 25) {
+                if (randomGame1 == 25 || randomGame2 == 25 || randomGame3 == 25) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ч ч"
+            }  if (randomGame4 == 26) {
+                if (randomGame1 == 26 || randomGame2 == 26 || randomGame3 == 26) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ш ш"
+            }  if (randomGame4 == 27) {
+                if (randomGame1 == 27 || randomGame2 == 27 || randomGame3 == 27) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Щ щ"
+            }  if (randomGame4 == 28) {
+                if (randomGame1 == 28 || randomGame2 == 28 || randomGame3 == 28) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ъ ъ"
+            }  if (randomGame4 == 29) {
+                if (randomGame1 == 29 || randomGame2 == 29 || randomGame3 == 29) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ы ы"
+            }  if (randomGame4 == 30) {
+                if (randomGame1 == 30 || randomGame2 == 30 || randomGame3 == 30) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ь ь"
+            }  if (randomGame4 == 31) {
+                if (randomGame1 == 31 || randomGame2 == 31 || randomGame3 == 31) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Э э"
+            }  if (randomGame4 == 32) {
+                if (randomGame1 == 32 || randomGame2 == 32 || randomGame3 == 32) {
+                    randomGame4++
+                }
+                game1Box4.innerHTML = "Ю ю"
+            }  if (randomGame4 == 33) {
+                if (randomGame1 == 33 || randomGame2 == 33 || randomGame3 == 33) {
+                    randomGame4 = 1
+                }
+                game1Box4.innerHTML = "Я я"
+            }
+
+        }
+
+    </script>
+</body>
+</html>

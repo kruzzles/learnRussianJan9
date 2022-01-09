@@ -1,0 +1,734 @@
+<!-- cool color scheme: https://i.pinimg.com/564x/3a/37/4b/3a374b7effe1277b80c1a5f377c010e4.jpg -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="https://cdn.britannica.com/42/3842-004-F47B77BC/Flag-Russia.jpg">
+    <title> Russian Essential Words </title>
+</head>
+<body style="background-color: black;">
+
+    <!-- top navigation -->
+    <div id="nav" onclick="openNav()">
+        <div id="gears">
+            <div id="gear1"> <img src="../images/gear1.png"> </div>
+            <div id="gear2"> <img src="../images/gear1.png"> </div>
+            <div id="gear3"> <img src="../images/gear1.png"> </div>
+        </div>
+        <img src="../images/blank.png">
+    </div>
+
+    <div id="navOptions">
+        <div id="navOptionsA">
+            <p><a href="../index.html" style="margin-top: 10%; color: white;"> HOME </a></p>
+            <p><a href="../languageselect.html" style="color: white;"> ESSENTIALS </a></p>
+            <p><a href="vocabulary.html" style="color: white;"> VOCABULARY </a></p>
+    </div>
+    </div>
+
+    <div id="openedNav" onclick="closeNav()">
+        <div id="gears">
+        </div>
+        <img src="../images/blank.png">
+    </div>
+
+    <!-- top navigation -->
+
+    <div id="background">
+
+    <div id="flashCardWrapper">
+        <div id="randomCard"><button onclick=" x = Math.floor(Math.random() * 38) + 1; hideAnswer();"> RANDOM CARD </button></div>
+        <div id="flipButtonsEssentials">
+            <div id="flipBtn1"><button onclick="revealAnswer()"> SHOW ANSWER </button></div>
+            <div id="flipBtn2"><button onclick="hideAnswer()"> HIDE ANSWER </button></div>
+        </div>
+        <div id="flashCard">
+            <div id="essentialCard">
+            <div id="flashCardInnerText">
+             YES 
+        </div>
+        <div id="flashCardImg">
+        <img src="../images/yes.png" id="insideImg">
+    </div>
+        </div>
+        <div id="essentialNextBtn">
+            <button onclick="x++, hideAnswer();"> NEXT CARD </button>
+        </div>
+        <div id="essentialResetBtn">
+            <button onclick="window.location.reload();"> RESET CARDS </button>
+        </div>
+        <div id="essentialPreviousBtn">
+            <button onclick="x--, hideAnswer();"> PREVIOUS CARD </button>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+    <script>
+
+        const nav = document.getElementById("nav");
+        const navOptions = document.getElementById("navOptions");
+        const openedNav = document.getElementById("openedNav"); 
+        const gear1 = document.getElementById("gear1")
+        const gear2 = document.getElementById("gear2")
+        const gear3 = document.getElementById("gear3")
+        const essentialCard = document.getElementById("essentialCard");
+        const flashCardInnerText = document.getElementById("flashCardInnerText");
+        const essentialNextBtn = document.getElementById("essentialNextBtn");
+        const essentialResetBtn = document.getElementById("essentialResetBtn");
+        const flashCardImg = document.getElementById("flashCardImg");
+        const insideImg = document.getElementById ("insideImg");
+        essentialResetBtn.style.display = "none";
+        essentialPreviousBtn.style.display = "none"
+        var x = 1;
+
+        
+
+        function openNav() {
+            navOptions.style.marginLeft = "0";
+            navOptions.style.transition = "1s";
+            openedNav.style.visibility = "visible";
+            navOptions.style.visibility = "visible";
+
+            gear3.style.transform = "rotate(360deg)";
+            gear3.style.transition = "1s";
+
+            
+            gear2.style.transform = "rotate(-360deg)";
+            gear2.style.transition = "1s"; 
+          
+
+            gear1.style.transform = "rotate(360deg)";
+            gear1.style.transition = "1s";
+
+
+        }
+
+        function closeNav() {
+            navOptions.style.marginLeft = "-50vw";
+            nav.style.visibility = "visible";
+            openedNav.style.visibility = "hidden";
+            navOptions.style.transition = "1s";
+      
+            gear3.style.transform = "rotate(-360deg)";
+            gear3.style.transition = "1s";
+
+            gear2.style.transform = "rotate(360deg)";
+            gear2.style.transition = "1s";
+
+            gear1.style.transform = "rotate(-360deg)";
+            gear1.style.transition = "1s";
+        
+        }
+
+        function revealAnswer() {
+            essentialCard.style.transform = "rotateX(180deg)"
+            essentialCard.style.transition = "1s";
+            flashCardImg.style.display = "none"
+
+
+            if (x == 1) {
+            flashCardInnerText.innerHTML = "да" + "<br>" + "pronounciation: 'da'";
+            var audio = new Audio('../audio/yes.mp3');
+            audio.play();
+            }
+
+            if (x == 2) {
+            flashCardInnerText.innerHTML = "нет" + "<br>" + "pronounciation: 'nee-yet'";
+            var audio = new Audio('../audio/no.mp3');
+            audio.play();
+            }
+
+            if (x == 3) {
+            flashCardInnerText.innerHTML = "привет" + "<br>" + "pronounciation: 'pree-vyet'";
+            var audio = new Audio('../audio/hi.mp3');
+            audio.play();
+            }
+
+            if (x == 4) {
+            flashCardInnerText.innerHTML = "спасибо" + "<br>" + "pronounciation: 'spa-see-ba'";
+            var audio = new Audio('../audio/thanks.mp3');
+            audio.play();
+            }
+
+            if (x == 5) {
+            flashCardInnerText.innerHTML = "пожалуйста" + "<br>" + "pronounciation: 'ba-zhaul-sta'";
+            var audio = new Audio('../audio/please.mp3');
+            audio.play();
+            }
+
+            if (x == 6) {
+            flashCardInnerText.innerHTML = "пока" + "<br>" + "pronounciation: 'paka'";
+            var audio = new Audio('../audio/bye.mp3');
+            audio.play();
+            }
+
+            if (x == 7) {
+            flashCardInnerText.innerHTML = "я" + "<br>" + "pronounciation: 'ya'";
+            var audio = new Audio('../audio/33.mp3');
+            audio.play();
+            }
+
+            if (x == 8) {
+            flashCardInnerText.innerHTML = "и" + "<br>" + "pronounciation: 'ee'";
+            var audio = new Audio('../audio/10.mp3');
+            audio.play();
+            }
+
+            if (x == 9) {
+            flashCardInnerText.innerHTML = "или" + "<br>" + "pronounciation: 'ee-li'";
+            var audio = new Audio('../audio/or.mp3');
+            audio.play();
+            }
+
+            if (x == 10) {
+            flashCardInnerText.innerHTML = "этот" + "<br>" + "pronounciation: 'ehh-tot'";
+            var audio = new Audio('../audio/this.mp3');
+            audio.play();
+            }
+
+            if (x == 11) {
+            flashCardInnerText.innerHTML = "тот" + "<br>" + "pronounciation: 'tot'";
+            var audio = new Audio('../audio/that.mp3');
+            audio.play();
+            }
+
+            if (x == 12) {
+            flashCardInnerText.innerHTML = "там" + "<br>" + "pronounciation: 'tam'";
+            var audio = new Audio('../audio/there.mp3');
+            audio.play();
+            }
+
+            if (x == 13) {
+            flashCardInnerText.innerHTML = "их" + "<br>" + "pronounciation: 'ee-kh'";
+            var audio = new Audio('../audio/their.mp3');
+            audio.play();
+            }
+
+            if (x == 14) {
+            flashCardInnerText.innerHTML = "кто" + "<br>" + "pronounciation: 'kto'";
+            var audio = new Audio('../audio/who.mp3');
+            audio.play();
+            }
+
+            if (x == 15) {
+            flashCardInnerText.innerHTML = "что" + "<br>" + "pronounciation: 'ch-to'";
+            var audio = new Audio('../audio/what.mp3');
+            audio.play();
+            }
+
+            if (x == 16) {
+            flashCardInnerText.innerHTML = "где" + "<br>" + "pronounciation: 'g-de'";
+            var audio = new Audio('../audio/where.mp3');
+            audio.play();
+            }
+
+            if (x == 17) {
+            flashCardInnerText.innerHTML = "когда" + "<br>" + "pronounciation: 'kug-da'";
+            var audio = new Audio('../audio/when.mp3');
+            audio.play();
+            }
+
+            if (x == 18) {
+            flashCardInnerText.innerHTML = "почему" + "<br>" + "pronounciation: 'puh-cha-moo'";
+            var audio = new Audio('../audio/why.mp3');
+            audio.play();
+            }
+
+            if (x == 19) {
+            flashCardInnerText.innerHTML = "как" + "<br>" + "pronounciation: 'kak'";
+            var audio = new Audio('../audio/how.mp3');
+            audio.play();
+            }
+
+            if (x == 20) {
+            flashCardInnerText.innerHTML = "хорошо" + "<br>" + "pronounciation: 'kha-rah-sho'";
+            var audio = new Audio('../audio/good.mp3');
+            audio.play();
+            }
+
+            if (x == 21) {
+            flashCardInnerText.innerHTML = "плохо" + "<br>" + "pronounciation: 'plo-kha'";
+            var audio = new Audio('../audio/bad.mp3');
+            audio.play();
+            }
+
+            if (x == 22) {
+            flashCardInnerText.innerHTML = "отлично" + "<br>" + "pronounciation: 'at-leech-na'";
+            var audio = new Audio('../audio/great.mp3');
+            audio.play();
+            }
+
+            if (x == 23) {
+            flashCardInnerText.innerHTML = "это" + "<br>" + "pronounciation: 'ehh-ta'";
+            var audio = new Audio('../audio/thisIs.mp3');
+            audio.play();
+            }
+
+            if (x == 24) {
+            flashCardInnerText.innerHTML = "мой" + "<br>" + "pronounciation: 'moy'";
+            var audio = new Audio('../audio/my.mp3');
+            audio.play();
+            }
+
+            if (x == 25) {
+            flashCardInnerText.innerHTML = "не" + "<br>" + "pronounciation: 'nee-eh'";
+            var audio = new Audio('../audio/not.mp3');
+            audio.play();
+            }
+
+            if (x == 26) {
+            flashCardInnerText.innerHTML = "ты" + "<br>" + "pronounciation: 't-owee'" + "<br>" + "OR" + "<br>" + "вы" + "<br>" + "pronounciation: 'v-owee";
+            var audio = new Audio('../audio/you.mp3');
+            audio.play();    
+            }
+
+            if (x == 27) {
+            flashCardInnerText.innerHTML = "в" + "<br>" + "pronounciation: 'vw'";
+            var audio = new Audio('../audio/2.mp3');
+            audio.play();
+            }
+
+            if (x == 28) {
+            flashCardInnerText.innerHTML = "он" + "<br>" + "pronounciation: 'on'";
+            var audio = new Audio('../audio/he.mp3');
+            audio.play();
+            }
+
+            if (x == 29) {
+            flashCardInnerText.innerHTML = "она" + "<br>" + "pronounciation: 'on-ah'";
+            var audio = new Audio('../audio/she.mp3');
+            audio.play();
+            }
+
+            if (x == 30) {
+            flashCardInnerText.innerHTML = "нас" + "<br>" + "pronounciation: 'nas'" + "<br>" + "OR" + "<br>" + "мы" + "<br>" + "pronounciation: 'm-owee'";
+            var audio = new Audio('../audio/we.mp3');
+            audio.play();
+            }
+
+            if (x == 31) {
+            flashCardInnerText.innerHTML = "с" + "<br>" + "pronounciation: 's'";
+            var audio = new Audio('../audio/19.mp3');
+            audio.play();
+            }
+
+            if (x == 32) {
+            flashCardInnerText.innerHTML = "но" + "<br>" + "pronounciation: 'no'";
+            var audio = new Audio('../audio/but.mp3');
+            audio.play();
+            }
+
+            if (x == 33) {
+            flashCardInnerText.innerHTML = "все" + "<br>" + "pronounciation: 'f-see-ah'";
+            var audio = new Audio('../audio/everyone.mp3');
+            audio.play();
+            }
+
+            if (x == 34) {
+            flashCardInnerText.innerHTML = "никто" + "<br>" + "pronounciation: 'neek-to'";
+            var audio = new Audio('../audio/noOne.mp3');
+            audio.play();
+            }
+
+            if (x == 35) {
+            flashCardInnerText.innerHTML = "они" + "<br>" + "pronounciation: 'on-ee'";
+            var audio = new Audio('../audio/they.mp3');
+            audio.play();
+            }
+
+            if (x == 36) {
+            flashCardInnerText.innerHTML = "ваш" + "<br>" + "pronounciation: 'vash'";
+            var audio = new Audio('../audio/your.mp3');
+            audio.play();
+            }
+
+            if (x == 37) {
+            flashCardInnerText.innerHTML = "извините" + "<br>" + "pronounciation: 'eez-vin-ee-te'";
+            var audio = new Audio('../audio/sorry.mp3');
+            audio.play();
+            }
+            
+
+            flashCardInnerText.style.transform = "rotateX(180deg)"
+            flashCardInnerText.style.left = "8%";
+        }
+
+
+        function hideAnswer() {
+            essentialCard.style.transform = "rotateX(0deg)"
+            essentialCard.style.transition = "1s";
+            flashCardInnerText.style.transform = "rotateX(0deg)"
+            flashCardInnerText.style.left = "8%";
+            flashCardImg.style.display = "block"
+
+            if (x >=1 && x <= 36) {
+                essentialResetBtn.style.display = "none";
+                essentialNextBtn.style.display = "block";
+            }
+
+            if (x != 1) {
+                essentialPreviousBtn.style.display = "block"
+            }  else if (x = 1) {
+                essentialPreviousBtn.style.display = "none"
+            }
+
+            
+
+
+            if (x == 1) {
+            flashCardInnerText.innerHTML = "YES";
+            document.getElementById("insideImg").src = "../images/yes.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 2) {
+            flashCardInnerText.innerHTML = "NO";
+            document.getElementById("insideImg").src = "../images/x.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 3) {
+            flashCardInnerText.innerHTML = "HI (INFORMAL)";
+            document.getElementById("insideImg").src = "../images/hi.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 4) {
+            flashCardInnerText.innerHTML = "THANK YOU";
+            document.getElementById("insideImg").src = "../images/thankYou.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 5) {
+            flashCardInnerText.innerHTML = "PLEASE/ YOUR WELCOME";
+            document.getElementById("insideImg").src = "../images/please.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 6) {
+            flashCardInnerText.innerHTML = "BYE";
+            document.getElementById("insideImg").src = "../images/hi.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 7) {
+            flashCardInnerText.innerHTML = "I";
+            document.getElementById("insideImg").src = "../images/i.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 8) {
+            flashCardInnerText.innerHTML = "AND";
+            document.getElementById("insideImg").src = "../images/and.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 9) {
+            flashCardInnerText.innerHTML = "OR";
+            document.getElementById("insideImg").src = "../images/or.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 10) {
+            flashCardInnerText.innerHTML = "THIS";
+            document.getElementById("insideImg").src = "../images/this.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 11) {
+            flashCardInnerText.innerHTML = "THAT";
+            document.getElementById("insideImg").src = "../images/that.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 12) {
+            flashCardInnerText.innerHTML = "THERE";
+            document.getElementById("insideImg").src = "../images/there.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 13) {
+            flashCardInnerText.innerHTML = "THEIR";
+            document.getElementById("insideImg").src = "../images/their.png";
+            document.getElementById("insideImg").style.width = "350px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "250px"
+            }
+            }
+
+            if (x == 14) {
+            flashCardInnerText.innerHTML = "WHO";
+            document.getElementById("insideImg").src = "../images/who.png";
+            document.getElementById("insideImg").style.width = "350px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "250px"
+            }
+            }
+
+            if (x == 15) {
+            flashCardInnerText.innerHTML = "WHAT";
+            document.getElementById("insideImg").src = "../images/what.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 16) {
+            flashCardInnerText.innerHTML = "WHERE";
+            document.getElementById("insideImg").src = "../images/where.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 17) {
+            flashCardInnerText.innerHTML = "WHEN";
+            document.getElementById("insideImg").src = "../images/when.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 18) {
+            flashCardInnerText.innerHTML = "WHY";
+            document.getElementById("insideImg").src = "../images/what.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 19) {
+            flashCardInnerText.innerHTML = "HOW";
+            document.getElementById("insideImg").src = "../images/what.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 20) {
+            flashCardInnerText.innerHTML = "GOOD/ FINE";
+            document.getElementById("insideImg").src = "../images/good.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 21) {
+            flashCardInnerText.innerHTML = "BAD/ POORLY";
+            document.getElementById("insideImg").src = "../images/bad.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 22) {
+            flashCardInnerText.innerHTML = "GREAT/ AMAZING";
+            document.getElementById("insideImg").src = "../images/great.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 23) {
+            flashCardInnerText.innerHTML = "THIS IS/ IT IS/ IS IT?";
+            document.getElementById("insideImg").src = "../images/thisIs.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 24) {
+            flashCardInnerText.innerHTML = "MY";
+            document.getElementById("insideImg").src = "../images/my.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 25) {
+            flashCardInnerText.innerHTML = "NOT/ DON'T";
+            document.getElementById("insideImg").src = "../images/not.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 26) {
+            flashCardInnerText.innerHTML = "YOU";
+            document.getElementById("insideImg").src = "../images/you.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+            
+            if (x == 27) {
+            flashCardInnerText.innerHTML = "IN/ THE";
+            document.getElementById("insideImg").src = "../images/the.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 28) {
+            flashCardInnerText.innerHTML = "HE";
+            document.getElementById("insideImg").src = "../images/he.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 29) {
+            flashCardInnerText.innerHTML = "SHE";
+            document.getElementById("insideImg").src = "../images/she.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 30) {
+            flashCardInnerText.innerHTML = "US/ WE";
+            document.getElementById("insideImg").src = "../images/us.png";
+            document.getElementById("insideImg").style.width = "300px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "200px"
+            }
+            }
+
+            if (x == 31) {
+            flashCardInnerText.innerHTML = "WITH/ FROM";
+            document.getElementById("insideImg").src = "../images/with.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 32) {
+            flashCardInnerText.innerHTML = "BUT";
+            document.getElementById("insideImg").src = "../images/but.png";
+            document.getElementById("insideImg").style.width = "250px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "200px"
+            }
+            }
+
+            if (x == 33) {
+            flashCardInnerText.innerHTML = "EVERYONE";
+            document.getElementById("insideImg").src = "../images/everyone.png";
+            document.getElementById("insideImg").style.width = "250px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "200px"
+            }
+            }
+
+            if (x == 34) {
+            flashCardInnerText.innerHTML = "NOBODY";
+            document.getElementById("insideImg").src = "../images/noone.png";
+            document.getElementById("insideImg").style.width = "250px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "200px"
+            }
+            }
+
+            if (x == 35) {
+            flashCardInnerText.innerHTML = "THEY";
+            document.getElementById("insideImg").src = "../images/they.png";
+            document.getElementById("insideImg").style.width = "250px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "200px"
+            }
+            }
+
+            if (x == 36) {
+            flashCardInnerText.innerHTML = "YOUR";
+            document.getElementById("insideImg").src = "../images/your.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            }
+
+            if (x == 37) {
+            flashCardInnerText.innerHTML = "SORRY/ EXCUSE ME";
+            document.getElementById("insideImg").src = "../images/sorry.png";
+            document.getElementById("insideImg").style.width = "200px"
+            if (window.innerHeight < 693) {
+                document.getElementById("insideImg").style.width = "150px"
+            }
+            essentialNextBtn.style.display = "none";
+            essentialResetBtn.style.display = "block"
+            }
+        }
+
+const mediaQuery = window.matchMedia('(max-height: 693px)')
+
+function handleTabletChange(e) {
+  if (e.matches) {
+    document.getElementById("insideImg").style.width = "150px"
+  }
+}
+
+mediaQuery.addListener(handleTabletChange)
+
+handleTabletChange(mediaQuery)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!-- cool color scheme: https://i.pinimg.com/564x/3a/37/4b/3a374b7effe1277b80c1a5f377c010e4.jpg -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="https://cdn.britannica.com/42/3842-004-F47B77BC/Flag-Russia.jpg">
+    <title> Russian Important Phrases </title>
+</head>
+<body style="background-color: black;">
+
+    <!-- top navigation -->
+    <div id="nav" onclick="openNav()">
+        <div id="gears">
+            <div id="gear1"> <img src="../images/gear1.png"> </div>
+            <div id="gear2"> <img src="../images/gear1.png"> </div>
+            <div id="gear3"> <img src="../images/gear1.png"> </div>
+        </div>
+        <img src="../images/blank.png">
+    </div>
+
+    <div id="navOptions">
+        <div id="navOptionsA">
+            <p><a href="../index.html" style="margin-top: 10%; color: white;"> HOME </a></p>
+            <p><a href="../languageselect.html" style="color: white;"> ESSENTIALS </a></p>
+            <p><a href="vocabulary.html" style="color: white;"> VOCABULARY </a></p>
+    </div>
+    </div>
+    <div id="openedNav" onclick="closeNav()">
+        <div id="gears">
+        </div>
+        <img src="../images/blank.png">
+    </div>
+
+    <!-- top navigation -->
+
+    <div id="background">
+
+    <div id="flashCardWrapper">
+        <div id="randomCard"><button onclick=" x = Math.floor(Math.random() * 21) + 1; hideAnswer();"> RANDOM CARD </button></div>
+        <div id="flipButtonsEssentials">
+            <div id="flipBtn1"><button onclick="revealAnswer()"> SHOW ANSWER </button></div>
+            <div id="flipBtn2"><button onclick="hideAnswer()"> HIDE ANSWER </button></div>
+        </div>
+        <div id="flashCard">
+            <div id="essentialCard">
+            <div id="flashCardInnerText">
+             DO YOU SPEAK ENGLISH
+        </div>
+        <div id="flashCardImg">
+            <div id="importantPhrasesImg"><img src="../images/doYouSpeakEnglish.png" id="insideImg"></div>
+        </div>
+        </div>
+        <div id="essentialNextBtn">
+            <button onclick="x++, hideAnswer();"> NEXT CARD </button>
+        </div>
+        <div id="essentialResetBtn">
+            <button onclick="window.location.reload();"> RESET CARDS </button>
+        </div>
+        <div id="essentialPreviousBtn">
+            <button onclick="x--, hideAnswer();"> PREVIOUS CARD </button>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+    <script>
+
+        const nav = document.getElementById("nav");
+        const navOptions = document.getElementById("navOptions");
+        const openedNav = document.getElementById("openedNav"); 
+        const gear1 = document.getElementById("gear1")
+        const gear2 = document.getElementById("gear2")
+        const gear3 = document.getElementById("gear3")
+        const essentialCard = document.getElementById("essentialCard");
+        const flashCardInnerText = document.getElementById("flashCardInnerText");
+        const essentialNextBtn = document.getElementById("essentialNextBtn");
+        const essentialResetBtn = document.getElementById("essentialResetBtn");
+        const essentialPreviousBtn = document.getElementById("essentialPreviousBtn")
+        essentialPreviousBtn.style.display = "none"
+        essentialResetBtn.style.display = "none";
+        var x = 1;
+
+        function openNav() {
+            navOptions.style.marginLeft = "0";
+            navOptions.style.transition = "1s";
+            openedNav.style.visibility = "visible";
+            navOptions.style.visibility = "visible";
+
+            gear3.style.transform = "rotate(360deg)";
+            gear3.style.transition = "1s";
+
+            
+            gear2.style.transform = "rotate(-360deg)";
+            gear2.style.transition = "1s"; 
+          
+
+            gear1.style.transform = "rotate(360deg)";
+            gear1.style.transition = "1s";
+
+
+        }
+
+        function closeNav() {
+            navOptions.style.marginLeft = "-50vw";
+            nav.style.visibility = "visible";
+            openedNav.style.visibility = "hidden";
+            navOptions.style.transition = "1s";
+      
+            gear3.style.transform = "rotate(-360deg)";
+            gear3.style.transition = "1s";
+
+            gear2.style.transform = "rotate(360deg)";
+            gear2.style.transition = "1s";
+
+            gear1.style.transform = "rotate(-360deg)";
+            gear1.style.transition = "1s";
+        
+        }
+
+        function revealAnswer() {
+            essentialCard.style.transform = "rotateX(180deg)"
+            essentialCard.style.transition = "1s";
+            flashCardImg.style.display = "none"
+
+            if (x == 1) {
+            flashCardInnerText.innerHTML = "вы говорите по-английски" + "<br>" + "pronounciation: 'v-owee gavo-reetee - po-angleeski'";
+            var audio = new Audio ('../audio/doYouSpeakEnglish.mp3');
+            audio.play();
+            }
+
+            if (x == 2) {
+            flashCardInnerText.innerHTML = "рад встрече" + "<br>" + "pronounciation: 'rad vstreche'";
+            var audio = new Audio ('../audio/niceToMeetYou.mp3');
+            audio.play();
+            }
+
+            if (x == 3) {
+            flashCardInnerText.innerHTML = "а у вас" + "<br>" + "pronounciation: 'ah oo vas'";
+            var audio = new Audio ('../audio/andYou.mp3');
+            audio.play();
+            }
+
+            if (x == 4) {
+            flashCardInnerText.innerHTML = "притормозите пожалуйста" + "<br>" + "pronounciation: 'pree-tor-moz-ee-teh pozhaulsta'";
+            var audio = new Audio ('../audio/slowDownPlease.mp3');
+            audio.play();
+            }
+
+            if (x == 5) {
+            flashCardInnerText.innerHTML = "пожалуйста повторите" + "<br>" + "pronounciation: 'pozhaulsta povtorite'";
+            var audio = new Audio ('../audio/pleaseRepeat.mp3');
+            audio.play();
+            }
+
+            if (x == 6) {
+            flashCardInnerText.innerHTML = "болшое спасибо" + "<br>" + "pronounciation: 'bolshoy spaseeba'";
+            var audio = new Audio ('../audio/thankYouSoMuch.mp3');
+            audio.play();
+            }
+
+            if (x == 7) {
+            flashCardInnerText.innerHTML = "я немного понимаю" + "<br>" + "pronounciation: 'ya nemnogo ponimayu'";
+            var audio = new Audio ('../audio/iUnderstandALittle.mp3');
+            audio.play();
+            }
+
+            if (x == 8) {
+            flashCardInnerText.innerHTML = "как вы думаете" + "<br>" + "pronounciation: 'kak v-owee doom-ayete'";
+            var audio = new Audio ('../audio/whatDoYouThink.mp3');
+            audio.play();
+            }
+
+            if (x == 9) {
+            flashCardInnerText.innerHTML = "я думаю" + "<br>" + "pronounciation: 'ya doom-eye-oo'";
+            var audio = new Audio ('../audio/iThink.mp3');
+            audio.play();
+            }
+
+            if (x == 10) {
+            flashCardInnerText.innerHTML = "мне нравится" + "<br>" + "pronounciation: 'mne nravetsa'";
+            var audio = new Audio ('../audio/iLike.mp3');
+            audio.play();
+            }
+
+            if (x == 11) {
+            flashCardInnerText.innerHTML = "мне очень нравится" + "<br>" + "pronounciation: 'mne ochen nravetsa'";
+            var audio = new Audio ('../audio/iVeryMuchLike.mp3');
+            audio.play();
+            }
+
+            if (x == 12) {
+            flashCardInnerText.innerHTML = "мне не нравится" + "<br>" + "pronounciation: 'mne ne-eh nravetsa'";
+            var audio = new Audio ('../audio/iDontLike.mp3');
+            audio.play();
+            }
+
+            if (x == 13) {
+            flashCardInnerText.innerHTML = "я не знаю" + "<br>" + "pronounciation: 'ya ne-eh zn-eye-oh'";
+            var audio = new Audio ('../audio/iDontKnow.mp3');
+            audio.play();
+            }
+
+            if (x == 14) {
+            flashCardInnerText.innerHTML = "когда у тебя есть день рождения" + "<br>" + "pronounciation: 'kogda oo tebya yest dein rozhden-ee-ya'";
+            var audio = new Audio ('../audio/whenIsYourBirthday.mp3');
+            audio.play();
+            }
+
+            if (x == 15) {
+            flashCardInnerText.innerHTML = "где туалет" + "<br>" + "pronounciation: 'gde tua-let'";
+            var audio = new Audio ('../audio/whereIsTheBathroom.mp3');
+            audio.play();
+            }
+
+            if (x == 16) {
+            flashCardInnerText.innerHTML = "Вы кем работаете" + "<br>" + "pronounciation: 'v-owee kem rabotate'";
+            var audio = new Audio ('../audio/whatDoYouDoForWork.mp3');
+            audio.play();
+            }
+
+            if (x == 17) {
+            flashCardInnerText.innerHTML = "Всё  будет  нормально" + "<br>" + "pronounciation: 'vso boodet normal-no'";
+            var audio = new Audio ('../audio/everythingWillBeFine.mp3');
+            audio.play();
+            }
+
+            if (x == 18) {
+            flashCardInnerText.innerHTML = "Сколько лет, сколько зим" + "<br>" + "pronounciation: 'skolko lee-et skolko zeem'";
+            var audio = new Audio ('../audio/longTimeNoSee.mp3');
+            audio.play();
+            }
+
+            if (x == 19) {
+            flashCardInnerText.innerHTML = "Можно мне" + "<br>" + "pronounciation: 'mozhno mne'";
+            var audio = new Audio ('../audio/canIHave.mp3');
+            audio.play();
+            }
+
+            if (x == 20) {
+            flashCardInnerText.innerHTML = "позвольте представиться" + "<br>" + "pronounciation: 'pozvolte predstavitsya'";
+            var audio = new Audio ('../audio/letMeIntroduceMyself.mp3');
+            audio.play();
+            }
+            
+
+            flashCardInnerText.style.transform = "rotateX(180deg)"
+            flashCardInnerText.style.left = "8%";
+        }
+
+        function hideAnswer() {
+            essentialCard.style.transform = "rotateX(0deg)"
+            essentialCard.style.transition = "1s";
+            flashCardInnerText.style.transform = "rotateX(0deg)"
+            flashCardInnerText.style.left = "8%";
+            flashCardImg.style.display = "block"
+
+            if (x != 1) {
+                essentialPreviousBtn.style.display = "block"
+            } else if (x = 1) {
+                essentialPreviousBtn.style.display = "none";
+            }
+
+            if (x >=1 && x <= 19) {
+                essentialResetBtn.style.display = "none";
+                essentialNextBtn.style.display = "block";
+            }
+
+            if (x == 1) {
+            flashCardInnerText.innerHTML = "DO YOU SPEAK ENGLISH";
+            document.getElementById("insideImg").src = "../images/doYouSpeakEnglish.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 2) {
+            flashCardInnerText.innerHTML = "NICE TO MEET YOU";
+            document.getElementById("insideImg").src = "../images/niceToMeetYou.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 3) {
+            flashCardInnerText.innerHTML = "AND YOU";
+            document.getElementById("insideImg").src = "../images/andYou.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 4) {
+            flashCardInnerText.innerHTML = "SLOW DOWN PLEASE";
+            document.getElementById("insideImg").src = "../images/slowDownPlease.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 5) {
+            flashCardInnerText.innerHTML = "PLEASE REPEAT";
+            document.getElementById("insideImg").src = "../images/pleaseRepeat.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 6) {
+            flashCardInnerText.innerHTML = "THANK YOU SO MUCH";
+            document.getElementById("insideImg").src = "../images/thankYouSoMuch.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 7) {
+            flashCardInnerText.innerHTML = "I UNDERSTAND A LITTLE";
+            document.getElementById("insideImg").src = "../images/iUnderstandALittle.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 8) {
+            flashCardInnerText.innerHTML = "WHAT DO YOU THINK";
+            document.getElementById("insideImg").src = "../images/whatDoYouThink.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 9) {
+            flashCardInnerText.innerHTML = "I THINK";
+            document.getElementById("insideImg").src = "../images/iThink.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 10) {
+            flashCardInnerText.innerHTML = "I LIKE";
+            document.getElementById("insideImg").src = "../images/iLike.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 11) {
+            flashCardInnerText.innerHTML = "I VERY MUCH LIKE"
+            document.getElementById("insideImg").src = "../images/iVeryMuchLike.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 12) {
+            flashCardInnerText.innerHTML = "I DONT LIKE";
+            document.getElementById("insideImg").src = "../images/iDontLike.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 13) {
+            flashCardInnerText.innerHTML = "I DONT KNOW";
+            document.getElementById("insideImg").src = "../images/iDontKnow.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 14) {
+            flashCardInnerText.innerHTML = "WHEN IS YOUR BIRTHDAY";
+            document.getElementById("insideImg").src = "../images/whenIsYourBirthday.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 15) {
+            flashCardInnerText.innerHTML = "WHERE IS THE BATHROOM";
+            document.getElementById("insideImg").src = "../images/whereIsTheBathroom.png";
+            document.getElementById("insideImg").style.width = "200px"
+
+            }
+
+            if (x == 16) {
+            flashCardInnerText.innerHTML = "WHAT DO YOU DO FOR WORK";
+            document.getElementById("insideImg").src = "../images/whatDoYouDoForWork.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 17) {
+            flashCardInnerText.innerHTML = "EVERYTHING WILL BE FINE";
+            document.getElementById("insideImg").src = "../images/everythingWillBeFine.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 18) {
+            flashCardInnerText.innerHTML = "LONG TIME NO SEE";
+            document.getElementById("insideImg").src = "../images/longTimeNoSee.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 19) {
+            flashCardInnerText.innerHTML = "CAN I HAVE";
+            document.getElementById("insideImg").src = "../images/canIHave.png";
+            document.getElementById("insideImg").style.width = "200px"
+            }
+
+            if (x == 20) {
+            flashCardInnerText.innerHTML = "LET ME INTRODUCE MYSELF";
+            document.getElementById("insideImg").src = "../images/letMeIntroduceMyself.png";
+            document.getElementById("insideImg").style.width = "200px"
+            essentialNextBtn.style.display = "none";
+            essentialResetBtn.style.display = "block"
+            }
+        }
+
+    </script>
+
+</body>
+</html>
